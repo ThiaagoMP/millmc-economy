@@ -10,12 +10,12 @@ class PlayerListeners(private val accountController: AccountController) : Listen
 
     @EventHandler
     fun onJoin(event: PlayerJoinEvent) {
-        accountController.loadAccount(event.player.uniqueId)
+        accountController.loadAccount(event.player.name)
     }
 
     @EventHandler
     fun onQuit(event: PlayerQuitEvent) {
-        accountController.removeAccountInCache(event.player.uniqueId)
+        accountController.removeAccountInCache(event.player.name)
     }
 
 }

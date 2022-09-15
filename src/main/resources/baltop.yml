@@ -1,0 +1,53 @@
+PLAYERS: 16
+TIME_RELOAD: 20
+INVENTORY:
+  LINES: 4
+  ITEMS:
+    16:
+      positionInTop: 16
+      slot: 28
+    15:
+      positionInTop: 15
+      slot: 29
+    14:
+      positionInTop: 14
+      slot: 30
+    13:
+      positionInTop: 13
+      slot: 31
+    12:
+      positionInTop: 12
+      slot: 32
+    11:
+      positionInTop: 11
+      slot: 33
+    10:
+      positionInTop: 10
+      slot: 34
+    9:
+      positionInTop: 9
+      slot: 20
+    8:
+      positionInTop: 8
+      slot: 21
+    7:
+      positionInTop: 7
+      slot: 22
+    6:
+      positionInTop: 6
+      slot: 23
+    5:
+      positionInTop: 5
+      slot: 24
+    4:
+      positionInTop: 4
+      slot: 12
+    3:
+      positionInTop: 3
+      slot: 13
+    2:
+      positionInTop: 2
+      slot: 14
+    1:
+      positionInTop: 1
+      slot: 4

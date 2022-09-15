@@ -1,0 +1,52 @@
+pt-br:
+  BASIC:
+    MONEY_MESSAGE: '&aDinheiro de %player%: %money%'
+    PLAYER_NOT_FOUND: '&cPlayer não encontrado!'
+    COMMAND_INCORRECT_PAY: '&cPor favor utilize /pagar (player) (quantia)'
+    NOT_ENOUGH_MONEY: '&cVocê não tem dinheiro suficiente!'
+    YOU_PAID: '&aVocê pagou o player %player% na quantia de %amount%'
+    YOU_RECEIVED: '&aVocê recebeu %amount% de %player%'
+    COMMAND_INCORRECT_BANK_CHECK: '&aPor favor utilize /cheque (quantia)'
+    INVENTORY_FULL: '&cPor favor esvazie seu inventário!'
+    USE_NUMBER_TO_ARGS: '&cPor favor utilize apenas números!'
+    CHECK_ADDED: '&aCheque adicionado em seu inventário!'
+    CHECK_UTILIZED: '&aO cheque de valor %money% foi debitado em sua conta!'
+    BAL_TOP_INVENTORY_TITLE: '&8Baltop'
+    BAL_TOP_DISPLAY_NAME: '&7%player%'
+    BAL_TOP_DISPLAY_LORE:
+      - ''
+      - '&7Este é o player %position%° mais rico do servidor!'
+      - '&7Seu capital: &a%money%!'
+    BANK_CHECK:
+      DISPLAY_NAME: '&aCheque'
+      LORE:
+        - ''
+        - '&aUse Botão direito + shift para depositar em sua conta!'
+        - '&aPlayer gerador: &7%player%'
+        - '&aValor: &7%amount%'
+en-us:
+  BASIC:
+    MONEY_MESSAGE: '&aMoney from %player%: %money%'
+    PLAYER_NOT_FOUND: '&cPlayer not found!'
+    COMMAND_INCORRECT_PAY: '&cPlease use %command%'
+    NOT_ENOUGH_MONEY: '&cYou do not have enough money!'
+    YOU_PAID: '&aYou paid the player %player% in the amount of %amount%'
+    YOU_RECEIVED: '&aYou received %amount% from %player%'
+    COMMAND_INCORRECT_BANK_CHECK: '&aPlease use /bankcheck (amount)'
+    INVENTORY_FULL: '&cPlease empty your inventory!'
+    USE_NUMBER_TO_ARGS: '&cPlease use numbers only!'
+    CHECK_ADDED: '&aCheck added to your inventory!!'
+    CHECK_UTILIZED: '&aThe check for %money% has been debited from your account!'
+    BAL_TOP_INVENTORY_TITLE: '&8Baltop'
+    BAL_TOP_DISPLAY_NAME: '&7%player%'
+    BAL_TOP_DISPLAY_LORE:
+      - ''
+      - '&7This is the richest %position%° player on the server!'
+      - '&7 Your capital: &a%money%!'
+    BANK_CHECK:
+      DISPLAY_NAME: '&aBank check'
+      LORE:
+        - ''
+        - '&aUse right button + shift to fund your account!'
+        - '&aGenerator player: &7%player%'
+        - '&aAmount: &7%amount%'

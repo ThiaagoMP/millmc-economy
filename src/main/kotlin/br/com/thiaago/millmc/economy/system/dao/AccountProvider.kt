@@ -1,13 +1,14 @@
 package br.com.thiaago.millmc.economy.system.dao
 
+import br.com.thiaago.millmc.economy.baltop.entity.BaltopPlayer
+import br.com.thiaago.millmc.economy.system.dao.AccountsTable.balance
 import br.com.thiaago.millmc.economy.system.entities.Account
+import org.bukkit.Bukkit
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
-import java.util.*
 
-object AccountsTable : Table() {
-    val id: Column<Int> = integer("id").autoIncrement()
-    val uuid = varchar("uuid", 20)
+object AccountsTable : Table("economy_accounts") {
+    val name = varchar("name", 20)
     val balance = long("balance")
 }
 
@@ -19,28 +20,36 @@ class AccountProvider(private val database: Database) {
         }
     }
 
-    fun getBalance(uuid: UUID): Long {
+    fun hasAccount(name: String): Boolean {
+        var has = false
+        transaction(database) {
+            has = AccountsTable.select { AccountsTable.name eq name.toString() }.firstOrNull() != null
+        }
+        return has
+    }
+
+    fun getBalance(name: String): Long {
         var money = -9999L
         transaction(database) {
             try {
-                money = AccountsTable.select { AccountsTable.uuid eq uuid.toString() }
-                    .first { it[AccountsTable.uuid] == uuid.toString() }[AccountsTable.balance]
+                money = AccountsTable.select { AccountsTable.name eq name.toString() }
+                    .first { it[AccountsTable.name] == name.toString() }[balance]
             } catch (_: Exception) {
             }
         }
         return money
     }
 
-    fun deleteAccount(uuid: UUID) {
+    fun deleteAccount(name: String) {
         transaction(database) {
-            AccountsTable.deleteWhere { AccountsTable.uuid eq uuid.toString() }
+            AccountsTable.deleteWhere { AccountsTable.name eq name.toString() }
         }
     }
 
     fun insert(account: Account) {
         transaction(database) {
             AccountsTable.insert {
-                it[uuid] = account.uuid.toString()
+                it[name] = account.name
                 it[balance] = account.balance
             }
         }
@@ -48,10 +57,25 @@ class AccountProvider(private val database: Database) {
 
     fun update(account: Account) {
         transaction(database) {
-            AccountsTable.update({ AccountsTable.uuid eq account.uuid.toString() }) {
+            AccountsTable.update({ AccountsTable.name eq account.name.toString() }) {
                 it[balance] = account.balance
             }
         }
+    }
+
+    fun getBaltop(limit: Int): MutableMap<Short, BaltopPlayer> {
+        val map = emptyMap<Short, BaltopPlayer>().toMutableMap()
+
+        transaction(database) {
+            var position = 1
+            AccountsTable.selectAll().orderBy(balance, order = SortOrder.DESC).limit(limit).forEach {
+                if (position >= 10) return@transaction
+                map[position.toShort()] =
+                    BaltopPlayer(Bukkit.getOfflinePlayer(it[AccountsTable.name]), it[balance], position.toShort())
+                position++
+            }
+        }
+        return map
     }
 
 }

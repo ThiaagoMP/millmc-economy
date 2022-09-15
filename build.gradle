@@ -16,10 +16,12 @@ repositories {
     flatDir {
         dirs 'libs'
     }
+    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
 }
 
 dependencies {
-    compileOnly 'com.destroystokyo.paper:paper-api:1.12-R0.1-SNAPSHOT'
+    // compileOnly 'com.destroystokyo.paper:paper-api:1.8.8-R0.1-SNAPSHOT'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
     implementation 'com.github.DevNatan:inventory-framework:2.5.3'
@@ -31,6 +33,7 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
 
     compileOnly files("libs/MillMC-Core.jar")
+    compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
 }
 
 def targetJavaVersion = 17

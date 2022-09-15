@@ -2,3 +2,8 @@ name: MillMCEconomy
 version: 1.0
 main: br.com.thiaago.millmc.economy.MillMCEconomy
 description: 'Economy plugin with market, store, trade etc.'
+permissions:
+  setmoney.use:
+    description: "Permission for use /setmoney command"
+softdepend:
+  - MillMCCore
