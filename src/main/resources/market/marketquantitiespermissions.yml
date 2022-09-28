@@ -1,0 +1,10 @@
+QUANTITIES:
+  VIP1:
+    QUANTITY: 2
+    PERMISSION: 'market.vip1'
+  VIP2:
+    QUANTITY: 3
+    PERMISSION: 'market.vip2'
+  VIP3:
+    QUANTITY: 5
+    PERMISSION: 'market.vip3'

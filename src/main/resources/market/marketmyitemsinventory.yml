@@ -1,0 +1,30 @@
+INVENTORY:
+  TITLE:
+    pt-br:
+      TITLE: '&8Meus itens'
+    en-us:
+      TITLE: '&8My items'
+  MY_ITEMS_EXPIRED:
+    SLOT: 47
+    ICON:
+      TYPE: 'DIAMOND_SWORD'
+      DATA: 0
+      pt-br:
+        DISPLAY_NAME: '&aTeus itens expirados'
+        LORE:
+          - ''
+          - '&7Clique para gerenciar teus itens expirados no mercado!'
+      en-us:
+        DISPLAY_NAME: '&aYour items'
+        LORE:
+          - ''
+          - '&7Click to manage your items expired in the market!'
+  ITEMS_PLAYER:
+    pt-br:
+      LORE_ADDED:
+        - ''
+        - '&7Clique para remover o item do mercado!'
+    en-us:
+      LORE_ADDED:
+        - ''
+        - '&7Click to remove the item from the market!'

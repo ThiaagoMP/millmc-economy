@@ -1,6 +1,6 @@
 package br.com.thiaago.millmc.economy.system.dao
 
-import br.com.thiaago.millmc.economy.baltop.entity.BaltopPlayer
+import br.com.thiaago.millmc.economy.basic.baltop.entity.BaltopPlayer
 import br.com.thiaago.millmc.economy.system.dao.AccountsTable.balance
 import br.com.thiaago.millmc.economy.system.entities.Account
 import org.bukkit.Bukkit
@@ -9,6 +9,8 @@ import org.jetbrains.exposed.sql.transactions.transaction
 
 object AccountsTable : Table("economy_accounts") {
     val name = varchar("name", 20)
+
+    @OptIn(ExperimentalUnsignedTypes::class)
     val balance = long("balance")
 }
 
@@ -32,8 +34,8 @@ class AccountProvider(private val database: Database) {
         var money = -9999L
         transaction(database) {
             try {
-                money = AccountsTable.select { AccountsTable.name eq name.toString() }
-                    .first { it[AccountsTable.name] == name.toString() }[balance]
+                money = AccountsTable.select { AccountsTable.name eq name }
+                    .first { it[AccountsTable.name] == name }[balance]
             } catch (_: Exception) {
             }
         }
@@ -42,7 +44,7 @@ class AccountProvider(private val database: Database) {
 
     fun deleteAccount(name: String) {
         transaction(database) {
-            AccountsTable.deleteWhere { AccountsTable.name eq name.toString() }
+            AccountsTable.deleteWhere { AccountsTable.name eq name }
         }
     }
 
@@ -57,7 +59,7 @@ class AccountProvider(private val database: Database) {
 
     fun update(account: Account) {
         transaction(database) {
-            AccountsTable.update({ AccountsTable.name eq account.name.toString() }) {
+            AccountsTable.update({ AccountsTable.name eq account.name }) {
                 it[balance] = account.balance
             }
         }

@@ -1,6 +1,6 @@
-package br.com.thiaago.millmc.economy.baltop.runnable
+package br.com.thiaago.millmc.economy.basic.baltop.runnable
 
-import br.com.thiaago.millmc.economy.baltop.controller.BaltopController
+import br.com.thiaago.millmc.economy.basic.baltop.controller.BaltopController
 import br.com.thiaago.millmc.economy.system.dao.AccountProvider
 import org.bukkit.scheduler.BukkitRunnable
 

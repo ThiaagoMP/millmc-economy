@@ -24,13 +24,14 @@ dependencies {
     // compileOnly 'com.destroystokyo.paper:paper-api:1.8.8-R0.1-SNAPSHOT'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
-    implementation 'com.github.DevNatan:inventory-framework:2.5.3'
+    implementation files("libs/inventory-framework-2.5.4.jar")
     implementation 'com.github.SaiintBrisson.command-framework:bukkit:1.2.0'
     implementation 'io.github.bananapuncher714:nbteditor:7.18.3'
 
     implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
     implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-java-time:$exposedVersion")
 
     compileOnly files("libs/MillMC-Core.jar")
     compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'

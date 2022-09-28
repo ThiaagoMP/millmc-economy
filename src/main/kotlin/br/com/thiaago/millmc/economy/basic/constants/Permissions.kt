@@ -1,4 +1,4 @@
-package br.com.thiaago.millmc.economy.constants
+package br.com.thiaago.millmc.economy.basic.constants
 
 enum class Permissions(val value: String) {
 

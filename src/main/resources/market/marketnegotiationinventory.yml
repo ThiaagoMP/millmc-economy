@@ -1,0 +1,36 @@
+INVENTORY:
+  LINES: 3
+  TITLE:
+    pt-br:
+      TITLE: '&8Negociação'
+    en-us:
+      TITLE: '&8Negotiation'
+  ITEMS:
+    ACCEPT_ITEM:
+      SLOT: 13
+      TYPE: WOOL
+      DATA: 13
+      pt-br:
+        DISPLAY_NAME: '&aComprar'
+        LORE:
+          - ''
+          - '&7Clique para comprar este item!'
+      en-us:
+        DISPLAY_NAME: '&aBuy'
+        LORE:
+          - ''
+          - '&7Click to buy this item!'
+    DENY_ITEM:
+      SLOT: 15
+      TYPE: WOOL
+      DATA: 14
+      pt-br:
+        DISPLAY_NAME: '&aNegar'
+        LORE:
+          - ''
+          - '&7Clique para negar a comprar este item!'
+      en-us:
+        DISPLAY_NAME: '&cDeny'
+        LORE:
+          - ''
+          - '&7Click to deny buying this item!'

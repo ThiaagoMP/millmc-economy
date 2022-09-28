@@ -1,7 +1,7 @@
-package br.com.thiaago.millmc.economy.baltop.inventory
+package br.com.thiaago.millmc.economy.basic.baltop.inventory
 
 import br.com.thiaago.millmc.api.LanguageAPI
-import br.com.thiaago.millmc.economy.baltop.controller.BaltopController
+import br.com.thiaago.millmc.economy.basic.baltop.controller.BaltopController
 import br.com.thiaago.millmc.utils.ItemBuilder
 import me.saiintbrisson.minecraft.OpenViewContext
 import me.saiintbrisson.minecraft.View
@@ -22,7 +22,7 @@ class BaltopInventory(
     override fun onOpen(context: OpenViewContext) {
         context.setInventoryTitle(
             LanguageAPI.getTranslatedMessage(
-                "BASIC.BAL_TOP_INVENTORY_TITLE",
+                "BAL_TOP_INVENTORY_TITLE",
                 context.player,
                 emptyMap(),
                 messagesConfig
@@ -45,14 +45,14 @@ class BaltopInventory(
                     SkullType.PLAYER.ordinal.toShort()
                 ).setDisplayName(
                     LanguageAPI.getTranslatedMessage(
-                        "BASIC.BAL_TOP_DISPLAY_NAME",
+                        "BAL_TOP_DISPLAY_NAME",
                         context.player,
                         mapOf(Pair("%player%", playerTop.player.name)),
                         messagesConfig
                     )
                 ).setLore(
                     LanguageAPI.getTranslatedMessages(
-                        "BASIC.BAL_TOP_DISPLAY_LORE",
+                        "BAL_TOP_DISPLAY_LORE",
                         context.player,
                         mapOf(Pair("%position%°", position.toString()), Pair("%money%", playerTop.money.toString())),
                         messagesConfig

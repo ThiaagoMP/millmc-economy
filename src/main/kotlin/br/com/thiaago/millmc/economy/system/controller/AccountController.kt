@@ -73,7 +73,7 @@ class AccountController(
 
     private fun containsAccountInTable(name: String): Pair<Boolean, Long> {
         val balance = accountProvider.getBalance(name)
-        return Pair(balance != balanceIfNot, balance)
+        return Pair(balance != -9999L, balance)
     }
 
 }

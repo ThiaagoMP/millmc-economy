@@ -1,0 +1,56 @@
+INVENTORY:
+  LINES: 6
+  BORDER_ITEM:
+    TYPE:
+    DATA:
+    pt-br:
+      DISPLAY_NAME: '&aBlocos'
+      LORE:
+        - ''
+        - '&7Clique para comprar blocos de outros jogadores!'
+    en-us:
+      DISPLAY_NAME: '&aBlocks'
+      LORE:
+        - ''
+        - '&7Click to buy blocks from other players!'
+  ACCEPT_ITEM:
+    TYPE:
+    DATA:
+    pt-br:
+      DISPLAY_NAME: '&7Confirmar'
+      LORE:
+        - ''
+        - '&7Clique para confirmar a troca!'
+    en-us:
+      DISPLAY_NAME: '&7Confirm'
+      LORE:
+        - ''
+        - '&7Click to confirm the trade!'
+  DENY_ITEM:
+    TYPE:
+    DATA:
+    pt-br:
+      DISPLAY_NAME: '&7Negar'
+      LORE:
+        - ''
+        - '&aClique para negar a troca!'
+    en-us:
+      DISPLAY_NAME: '&7Deny'
+      LORE:
+        - ''
+        - '&aClick to deny the trade!'
+  INFO_ITEM:
+    TYPE: PAPER
+    DATA: 0
+    pt-br:
+      DISPLAY_NAME: '&aInformações'
+      LORE:
+        - ''
+        - '&7Coloque seus itens nos espaços vazios,'
+        - '&7Após isso clique em aceitar, para trocar seus itens com o outro jogador.'
+    en-us:
+      DISPLAY_NAME: '&aInfo'
+      LORE:
+        - ''
+        - '&7Place your items in the empty spaces,'
+        - '&7After that click accept, to exchange your items with the other player.'

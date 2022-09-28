@@ -1,7 +1,7 @@
-package br.com.thiaago.millmc.economy.baltop.command
+package br.com.thiaago.millmc.economy.basic.baltop.command
 
 import br.com.thiaago.millmc.economy.MillMCEconomy
-import br.com.thiaago.millmc.economy.baltop.inventory.BaltopInventory
+import br.com.thiaago.millmc.economy.basic.baltop.inventory.BaltopInventory
 import me.saiintbrisson.minecraft.command.annotation.Command
 import me.saiintbrisson.minecraft.command.command.Context
 import me.saiintbrisson.minecraft.command.target.CommandTarget

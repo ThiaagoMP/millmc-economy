@@ -30,7 +30,7 @@ class MoneyCommand(private val accountController: AccountController, private val
 
         player.sendMessage(
             LanguageAPI.getTranslatedMessage(
-                "BASIC.MONEY_MESSAGE", player, replaces, messagesConfig
+                "MONEY_MESSAGE", player, replaces, messagesConfig
             )
         )
     }
@@ -39,7 +39,7 @@ class MoneyCommand(private val accountController: AccountController, private val
         if (balance == -9999L) {
             player.sendMessage(
                 LanguageAPI.getTranslatedMessage(
-                    "BASIC.PLAYER_NOT_FOUND", player, emptyMap(), messagesConfig
+                    "PLAYER_NOT_FOUND", player, emptyMap(), messagesConfig
                 )
             )
             return true

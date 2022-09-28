@@ -46,7 +46,7 @@ class PayCommand(private val accountController: AccountController, private val m
             context.getArg(1).toInt()
         } catch (exception: Exception) {
             LanguageAPI.getTranslatedMessage(
-                "BASIC.USE_NUMBER_TO_ARGS",
+                "USE_NUMBER_TO_ARGS",
                 player,
                 emptyMap(),
                 messagesConfig
@@ -56,7 +56,7 @@ class PayCommand(private val accountController: AccountController, private val m
     }
 
     private fun playSounds(player: Player, playerTarget: OfflinePlayer) {
-        player.playSound(player.location, Sound.PISTON_EXTEND, 4f, 1f)
+        player.playSound(player.location, Sound.CAT_MEOW, 4f, 1f)
         if (playerTarget.isOnline) (playerTarget as Player).playSound(
             player.location,
             Sound.LEVEL_UP,
@@ -68,7 +68,7 @@ class PayCommand(private val accountController: AccountController, private val m
     private fun sendMessages(player: Player, playerTarget: OfflinePlayer, amount: Int) {
         player.sendMessage(
             LanguageAPI.getTranslatedMessage(
-                "BASIC.YOU_PAID",
+                "YOU_PAID",
                 player,
                 mapOf(Pair("%player%", playerTarget.name), Pair("%amount%", amount.toString())),
                 messagesConfig
@@ -77,7 +77,7 @@ class PayCommand(private val accountController: AccountController, private val m
         if (playerTarget.isOnline) {
             (playerTarget as Player).sendMessage(
                 LanguageAPI.getTranslatedMessage(
-                    "BASIC.YOU_RECEIVED",
+                    "YOU_RECEIVED",
                     player,
                     mapOf(Pair("%player%", player.name), Pair("%amount%", amount.toString())),
                     messagesConfig
@@ -90,7 +90,7 @@ class PayCommand(private val accountController: AccountController, private val m
         if (balance < amount) {
             player.sendMessage(
                 LanguageAPI.getTranslatedMessage(
-                    "BASIC.NOT_ENOUGH_MONEY",
+                    "NOT_ENOUGH_MONEY",
                     player,
                     emptyMap(),
                     messagesConfig
@@ -108,7 +108,7 @@ class PayCommand(private val accountController: AccountController, private val m
         if (!accountController.hasAccount(playerTarget.name)) {
             player.sendMessage(
                 LanguageAPI.getTranslatedMessage(
-                    "BASIC.PLAYER_NOT_FOUND",
+                    "PLAYER_NOT_FOUND",
                     player,
                     emptyMap(),
                     messagesConfig
@@ -126,7 +126,7 @@ class PayCommand(private val accountController: AccountController, private val m
         if (context.argsCount() != 2) {
             player.sendMessage(
                 LanguageAPI.getTranslatedMessage(
-                    "BASIC.COMMAND_INCORRECT_PAY",
+                    "COMMAND_INCORRECT",
                     player,
                     emptyMap(),
                     messagesConfig

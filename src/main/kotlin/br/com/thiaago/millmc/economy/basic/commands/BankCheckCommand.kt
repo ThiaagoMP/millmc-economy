@@ -40,7 +40,7 @@ class BankCheckCommand(
         player.inventory.addItem(NBTEditor.set(item, amount, Constants.BANK_CHECK_NBT.value))
 
         player.playSound(player.location, Sound.LEVEL_UP, 4f, 1f)
-        player.sendMessage(LanguageAPI.getTranslatedMessage("BASIC.CHECK_ADDED", player, emptyMap(), messagesConfig))
+        player.sendMessage(LanguageAPI.getTranslatedMessage("CHECK_ADDED", player, emptyMap(), messagesConfig))
     }
 
     private fun verifyEnoughMoney(
@@ -51,7 +51,7 @@ class BankCheckCommand(
         if (balance < amount) {
             player.sendMessage(
                 LanguageAPI.getTranslatedMessage(
-                    "BASIC.NOT_ENOUGH_MONEY", player, emptyMap(), messagesConfig
+                    "NOT_ENOUGH_MONEY", player, emptyMap(), messagesConfig
                 )
             )
             return true
@@ -63,7 +63,7 @@ class BankCheckCommand(
         if (player.inventory.firstEmpty() == -1) {
             player.sendMessage(
                 LanguageAPI.getTranslatedMessage(
-                    "BASIC.INVENTORY_FULL", player, emptyMap(), messagesConfig
+                    "INVENTORY_FULL", player, emptyMap(), messagesConfig
                 )
             )
             return true
@@ -78,7 +78,7 @@ class BankCheckCommand(
         if (context.argsCount() != 1) {
             player.sendMessage(
                 LanguageAPI.getTranslatedMessage(
-                    "BASIC.COMMAND_INCORRECT_BANK_CHECK", player, emptyMap(), messagesConfig
+                    "COMMAND_INCORRECT_BANK_CHECK", player, emptyMap(), messagesConfig
                 )
             )
             return true
@@ -88,9 +88,9 @@ class BankCheckCommand(
 
     private fun getItem(player: Player, amount: Long): ItemStack {
         val title =
-            LanguageAPI.getTranslatedMessage("BASIC.BANK_CHECK.DISPLAY_NAME", player, emptyMap(), messagesConfig)
+            LanguageAPI.getTranslatedMessage("BANK_CHECK.DISPLAY_NAME", player, emptyMap(), messagesConfig)
         val lore = LanguageAPI.getTranslatedMessages(
-            "BASIC.BANK_CHECK.LORE",
+            "BANK_CHECK.LORE",
             player,
             mapOf(Pair("%player%", player.name), Pair("%amount%", amount.toString())),
             messagesConfig
@@ -111,7 +111,7 @@ class BankCheckCommand(
             context.getArg(0).toLong()
         } catch (exception: Exception) {
             LanguageAPI.getTranslatedMessage(
-                "BASIC.USE_NUMBER_TO_ARGS", player, emptyMap(), messagesConfig
+                "USE_NUMBER_TO_ARGS", player, emptyMap(), messagesConfig
             )
             -9999
         }

@@ -1,0 +1,79 @@
+INVENTORY:
+  LINES: 3
+  TITLE:
+    pt-br:
+      TITLE: '&8Categorias'
+    en-us:
+      TITLE: '&8Categories'
+CATEGORIES:
+  WEAPONS:
+    ICON:
+      SLOT: 3
+      TYPE: 'DIAMOND_SWORD'
+      DATA: 0
+      pt-br:
+        DISPLAY_NAME: '&aArmas'
+        LORE:
+          - ''
+          - '&7Clique para comprar armas de outros jogadores!'
+      en-us:
+        DISPLAY_NAME: '&aWeapons'
+        LORE:
+          - ''
+          - '&7Click to buy weapons from other players!'
+    IDS:
+      - 'DIAMOND_SWORD'
+      - 'BOW'
+  BLOCKS:
+    ICON:
+      SLOT: 5
+      TYPE: 'DIRT'
+      DATA: 0
+      pt-br:
+        DISPLAY_NAME: '&aBlocos'
+        LORE:
+          - ''
+          - '&7Clique para comprar blocos de outros jogadores!'
+      en-us:
+        DISPLAY_NAME: '&aBlocks'
+        LORE:
+          - ''
+          - '&7Click to buy blocks from other players!'
+    IDS:
+      - 'STONE'
+      - 'DIRT'
+  FARM:
+    ICON:
+      SLOT: 7
+      TYPE: 'WHEAT'
+      DATA: 0
+      pt-br:
+        DISPLAY_NAME: '&aFazenda'
+        LORE:
+          - ''
+          - '&7Clique para comprar itens de colheita de outros jogadores!'
+      en-us:
+        DISPLAY_NAME: '&aFarm'
+        LORE:
+          - ''
+          - '&7Click to buy harvest items from other players!'
+    IDS:
+      - 'CACTUS'
+      - 'CARROT'
+  OTHER:
+    ICON:
+      SLOT: 13
+      TYPE: 'WEB'
+      DATA: 0
+      pt-br:
+        DISPLAY_NAME: '&aOutros'
+        LORE:
+          - ''
+          - '&7Clique para comprar itens variados de outros jogadores!'
+      en-us:
+        DISPLAY_NAME: '&aFarm'
+        LORE:
+          - ''
+          - '&7Click to buy miscellaneous items from other players!'
+    IDS:
+      - '*'

@@ -1,8 +1,8 @@
-package br.com.thiaago.millmc.economy.baltop.controller
+package br.com.thiaago.millmc.economy.basic.baltop.controller
 
 import br.com.thiaago.millmc.economy.MillMCEconomy
-import br.com.thiaago.millmc.economy.baltop.entity.BaltopPlayer
-import br.com.thiaago.millmc.economy.baltop.runnable.BaltopRunnable
+import br.com.thiaago.millmc.economy.basic.baltop.entity.BaltopPlayer
+import br.com.thiaago.millmc.economy.basic.baltop.runnable.BaltopRunnable
 import br.com.thiaago.millmc.economy.system.dao.AccountProvider
 import org.bukkit.configuration.file.FileConfiguration
 

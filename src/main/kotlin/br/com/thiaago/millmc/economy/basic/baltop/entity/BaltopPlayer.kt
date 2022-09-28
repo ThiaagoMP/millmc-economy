@@ -1,4 +1,4 @@
-package br.com.thiaago.millmc.economy.baltop.entity
+package br.com.thiaago.millmc.economy.basic.baltop.entity
 
 import org.bukkit.OfflinePlayer
 

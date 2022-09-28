@@ -1,0 +1,37 @@
+INVENTORY:
+  TITLE:
+    pt-br:
+      TITLE: '&8Itens'
+    en-us:
+      TITLE: '&8Items'
+  DEFAULT_ITEMS:
+    YOUR_ITEMS:
+      SLOT: 47
+      ICON:
+        TYPE: 'DIAMOND_SWORD'
+        DATA: 0
+        pt-br:
+          DISPLAY_NAME: '&aTeus itens'
+          LORE:
+            - ''
+            - '&7Clique para gerenciar teus itens no mercado!'
+        en-us:
+          DISPLAY_NAME: '&aYour items'
+          LORE:
+            - ''
+            - '&7Click to manage your items in the market!'
+  ITEMS_PLAYERS:
+    pt-br:
+      LORE_ADDED:
+        - ''
+        - '&7Vendedor: %seller%'
+        - '&7Preço: %price%'
+        - '&7Data: %date_format_br%'
+        - '&7Expira em: %date_expired_format_br%'
+    en-us:
+      LORE_ADDED:
+        - ''
+        - '&7Seller: %seller%'
+        - '&7Price: %price%'
+        - '&7Date: %date_format_eua%'
+        - '&7Expires on: %date_expired_format_eua%'

@@ -32,7 +32,7 @@ class BasicPlayerListeners(
         player.inventory.remove(itemInHand)
         player.sendMessage(
             LanguageAPI.getTranslatedMessage(
-                "BASIC.CHECK_UTILIZED",
+                "CHECK_UTILIZED",
                 player,
                 mapOf(Pair("%money%", amount.toString())),
                 messagesConfig
