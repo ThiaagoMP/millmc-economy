@@ -4,13 +4,11 @@ import br.com.thiaago.millmc.economy.MillMCEconomy
 import br.com.thiaago.millmc.economy.basic.baltop.inventory.BaltopInventory
 import br.com.thiaago.millmc.economy.config.impl.BaltopConfig
 import br.com.thiaago.millmc.economy.config.impl.MessagesConfig
-import br.com.thiaago.millmc.economy.config.impl.TradeConfig
 import br.com.thiaago.millmc.economy.marketplace.spigot.inventories.MarketCategoriesInventory
 import br.com.thiaago.millmc.economy.marketplace.spigot.inventories.MarketItemsInventory
 import br.com.thiaago.millmc.economy.marketplace.spigot.inventories.manage.MarketMyItemsExpiredInventory
 import br.com.thiaago.millmc.economy.marketplace.spigot.inventories.manage.MarketMyItemsInventory
 import br.com.thiaago.millmc.economy.marketplace.spigot.inventories.negotiation.MarketNegotiationItemInventory
-import br.com.thiaago.millmc.economy.trade.inventories.TradeInventory
 import me.saiintbrisson.minecraft.ViewFrame
 
 class ViewFrameLoader {
@@ -30,10 +28,6 @@ class ViewFrameLoader {
                 MarketMyItemsInventory(plugin.marketController!!),
                 MarketMyItemsExpiredInventory(plugin.marketController!!),
                 MarketNegotiationItemInventory(plugin.accountController!!),
-                TradeInventory(
-                    plugin.configController!!.configs[TradeConfig::class.java]!!.getConfig()!!,
-                    plugin.tradeController!!
-                ),
             ).register()
         }
     }
