@@ -17,10 +17,13 @@ import org.bukkit.Material
 import org.bukkit.configuration.ConfigurationSection
 import org.bukkit.entity.Player
 
-class MarketNegotiationItemInventory(private val accountController: AccountController) : View() {
+class MarketNegotiationItemInventory(private val accountController: AccountController) : View(
+    MillMCEconomy.instance!!.configController!!.configs[MarketNegotiationInventoryConfig::class.java]!!.getConfig()
+        ?.getConfigurationSection("INVENTORY")!!.getInt("LINES") * 9
+) {
 
     private val sectionInventory =
-        MillMCEconomy.instance!!.configController.configs[MarketNegotiationInventoryConfig::class.java]!!.getConfig()
+        MillMCEconomy.instance!!.configController!!.configs[MarketNegotiationInventoryConfig::class.java]!!.getConfig()
             ?.getConfigurationSection("INVENTORY")
     private val sectionItems = sectionInventory!!.getConfigurationSection("ITEMS")
 
@@ -28,7 +31,7 @@ class MarketNegotiationItemInventory(private val accountController: AccountContr
     private val denySection = sectionItems.getConfigurationSection("DENY_ITEM")
 
     private val messagesConfig =
-        MillMCEconomy.instance!!.configController.configs[MessagesConfig::class.java]!!.getConfig()!!
+        MillMCEconomy.instance!!.configController!!.configs[MessagesConfig::class.java]!!.getConfig()!!
 
     private val marketController = MillMCEconomy.instance!!.marketController!!
 

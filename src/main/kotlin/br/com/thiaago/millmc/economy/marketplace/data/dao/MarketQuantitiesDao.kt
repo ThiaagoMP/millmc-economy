@@ -10,7 +10,7 @@ class MarketQuantitiesDao {
         fun load(): List<MarketPermissions> {
             val list = emptyList<MarketPermissions>().toMutableList()
             val config =
-                MillMCEconomy.instance!!.configController.configs[MarketQuantitiesPermissionsConfig::class.java]!!.getConfig()!!
+                MillMCEconomy.instance!!.configController!!.configs[MarketQuantitiesPermissionsConfig::class.java]!!.getConfig()!!
 
             val section = config.getConfigurationSection("QUANTITIES")
             section.getKeys(false).forEach {

@@ -15,7 +15,7 @@ import org.bukkit.entity.Player
 class MarketAnnounceCommand(private val marketController: MarketController) {
 
     private val messagesConfig =
-        MillMCEconomy.instance!!.configController.configs[MessagesConfig::class.java]!!.getConfig()!!
+        MillMCEconomy.instance!!.configController!!.configs[MessagesConfig::class.java]!!.getConfig()!!
 
     @Command(name = "market.announce", aliases = ["mercado.anunciar"], target = CommandTarget.PLAYER)
     fun handleCommand(context: Context<CommandSender>) {

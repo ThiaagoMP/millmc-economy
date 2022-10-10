@@ -16,7 +16,7 @@ class BasicLoader {
 
     companion object {
         fun load(plugin: MillMCEconomy, bukkitFrame: BukkitFrame, accountController: AccountController) {
-            val messagesConfig = plugin.configController.configs[MessagesConfig::class.java]!!.getConfig()!!
+            val messagesConfig = plugin.configController!!.configs[MessagesConfig::class.java]!!.getConfig()!!
 
             Bukkit.getPluginManager().registerEvents(
                 BasicPlayerListeners(

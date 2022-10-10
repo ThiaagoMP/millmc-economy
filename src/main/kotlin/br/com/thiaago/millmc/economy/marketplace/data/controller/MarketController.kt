@@ -35,24 +35,29 @@ class MarketController(
         val marketItemsExpired = marketItemsExpiredProvider.getAllMarketItemsExpired(this)
 
         val config = MillMCEconomy.instance!!.config
+        val removeList = listOf<MarketItem>().toMutableList()
         marketItems.forEach {
             if (it.dateAnnounced.plusDays(config.getLong("DAYS_TO_EXPIRE_ITEMS_IN_MARKET")).isBefore(getTimeActual())) {
                 marketItemsProvider.remove(it)
-                marketItems.remove(it)
+                removeList.add(it)
                 marketItemsExpired.add(it)
                 marketItemsExpiredProvider.save(it)
             } else
                 it.marketCategory.items.add(it)
         }
 
+        marketItems.removeAll(removeList)
+        removeList.clear()
+
         marketItemsExpired.forEach {
             if (it.dateAnnounced.plusDays(config.getLong("DAYS_TO_DELETE_ITEMS_EXPIRED_IN_MARKET"))
                     .isBefore(getTimeActual())
             ) {
-                marketItemsExpired.remove(it)
+                removeList.add(it)
                 marketItemsExpiredProvider.remove(it)
             }
         }
+        marketItemsExpired.removeAll(removeList)
 
     }
 

@@ -16,7 +16,7 @@ import me.saiintbrisson.minecraft.ViewItem
 
 private object MarketInventoryFields {
     val config =
-        MillMCEconomy.instance!!.configController.configs[MarketMyItemsExpiredInventoryConfig::class.java]!!.getConfig()!!
+        MillMCEconomy.instance!!.configController!!.configs[MarketMyItemsExpiredInventoryConfig::class.java]!!.getConfig()!!
 }
 
 class MarketMyItemsExpiredInventory(private val marketController: MarketController) :
@@ -53,7 +53,7 @@ class MarketMyItemsExpiredInventory(private val marketController: MarketControll
                         "INVENTORY_FULL",
                         context.player,
                         emptyMap(),
-                        MillMCEconomy.instance!!.configController.configs[MessagesConfig::class.java]!!.getConfig()!!
+                        MillMCEconomy.instance!!.configController!!.configs[MessagesConfig::class.java]!!.getConfig()!!
                     )
                 )
                 return@onClick
@@ -65,7 +65,7 @@ class MarketMyItemsExpiredInventory(private val marketController: MarketControll
                     "MARKET_ITEM_EXPIRED_REMOVED",
                     context.player,
                     emptyMap(),
-                    MillMCEconomy.instance!!.configController.configs[MessagesConfig::class.java]!!.getConfig()!!
+                    MillMCEconomy.instance!!.configController!!.configs[MessagesConfig::class.java]!!.getConfig()!!
                 )
             )
             context.player.inventory.addItem(value.itemStack)

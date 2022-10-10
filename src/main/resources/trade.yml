@@ -1,21 +1,20 @@
 INVENTORY:
   LINES: 6
+  pt-br:
+    TITLE: '&8Troca'
+  en-us:
+    TITLE: '&8Trade'
   BORDER_ITEM:
-    TYPE:
-    DATA:
+    TYPE: IRON_BARDING
+    DATA: 0
     pt-br:
-      DISPLAY_NAME: '&aBlocos'
-      LORE:
-        - ''
-        - '&7Clique para comprar blocos de outros jogadores!'
+      DISPLAY_NAME: '&7-'
     en-us:
-      DISPLAY_NAME: '&aBlocks'
-      LORE:
-        - ''
-        - '&7Click to buy blocks from other players!'
+      DISPLAY_NAME: '&7-'
   ACCEPT_ITEM:
-    TYPE:
-    DATA:
+    TYPE: INK_SACK
+    COLOR_INITIAL: GRAY
+    COLOR_ACCEPT: LIME
     pt-br:
       DISPLAY_NAME: '&7Confirmar'
       LORE:
@@ -26,19 +25,6 @@ INVENTORY:
       LORE:
         - ''
         - '&7Click to confirm the trade!'
-  DENY_ITEM:
-    TYPE:
-    DATA:
-    pt-br:
-      DISPLAY_NAME: '&7Negar'
-      LORE:
-        - ''
-        - '&aClique para negar a troca!'
-    en-us:
-      DISPLAY_NAME: '&7Deny'
-      LORE:
-        - ''
-        - '&aClick to deny the trade!'
   INFO_ITEM:
     TYPE: PAPER
     DATA: 0

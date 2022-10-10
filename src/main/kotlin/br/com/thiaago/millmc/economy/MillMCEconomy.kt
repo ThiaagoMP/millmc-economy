@@ -15,6 +15,8 @@ import br.com.thiaago.millmc.economy.system.controller.AccountController
 import br.com.thiaago.millmc.economy.system.dao.AccountProvider
 import br.com.thiaago.millmc.economy.system.runnable.SaveAccountsRunnable
 import br.com.thiaago.millmc.economy.system.spigot.listener.PlayerListeners
+import br.com.thiaago.millmc.economy.trade.TradeLoader
+import br.com.thiaago.millmc.economy.trade.data.controller.TradeController
 import me.saiintbrisson.bukkit.command.BukkitFrame
 import me.saiintbrisson.minecraft.ViewFrame
 import org.bukkit.Bukkit
@@ -27,7 +29,7 @@ class MillMCEconomy : JavaPlugin() {
             private set
     }
 
-    val configController = ConfigController().load(this)
+    var configController: ConfigController? = null
 
     var accountController: AccountController? = null
     var baltopController: BaltopController? = null
@@ -37,28 +39,32 @@ class MillMCEconomy : JavaPlugin() {
     private var marketItemsExpiredProvider: MarketItemsExpiredProvider? = null
 
     var marketController: MarketController? = null
+    var tradeController: TradeController? = null
 
     var viewFrame: ViewFrame? = null
 
     override fun onEnable() {
         instance = this
         saveDefaultConfig()
+        configController = ConfigController().load(this)
 
         if (initDatabase()) return
         accountController = AccountController(accountProvider = accountProvider!!)
 
         baltopController = BaltopController(
-            baltopConfig = configController.configs[BaltopConfig::class.java]!!.getConfig()!!,
+            baltopConfig = configController!!.configs[BaltopConfig::class.java]!!.getConfig()!!,
             accountProvider = accountProvider!!
         )
 
         initSaveAccountsTask()
 
         marketController = MarketController(
-            categoriesConfig = configController.configs[MarketCategoriesInventoryConfig::class.java]!!.getConfig()!!,
+            categoriesConfig = configController!!.configs[MarketCategoriesInventoryConfig::class.java]!!.getConfig()!!,
             marketItemsProvider = marketItemsProvider!!,
             marketItemsExpiredProvider = marketItemsExpiredProvider!!
         )
+
+        tradeController = TradeController()
 
         Bukkit.getPluginManager().registerEvents(PlayerListeners(accountController!!), this)
         viewFrame = ViewFrameLoader.load(this)
@@ -66,6 +72,7 @@ class MillMCEconomy : JavaPlugin() {
         val bukkitFrame = BukkitFrame(this)
         BasicLoader.load(this, bukkitFrame, accountController!!)
         MarketLoader.load(bukkitFrame)
+        TradeLoader.load(bukkitFrame, this)
 
         //just for testing, reload
         Bukkit.getOnlinePlayers().forEach { accountController!!.loadAccount(it.name) }

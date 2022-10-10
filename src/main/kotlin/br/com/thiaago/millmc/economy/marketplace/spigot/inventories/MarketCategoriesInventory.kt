@@ -16,7 +16,7 @@ class MarketCategoriesInventory(private val marketController: MarketController) 
     object MarketInventoryFields {
         const val KEY_CATEGORY = "KEY_CATEGORY"
         val config =
-            MillMCEconomy.instance!!.configController.configs[MarketCategoriesInventoryConfig::class.java]!!.getConfig()!!
+            MillMCEconomy.instance!!.configController!!.configs[MarketCategoriesInventoryConfig::class.java]!!.getConfig()!!
         val size = config.getInt("INVENTORY.LINES")
     }
 

@@ -24,7 +24,7 @@ class MarketMyItemsInventory(private val marketController: MarketController) : P
     init {
         isCancelOnClick = true
         sectionInventory =
-            MillMCEconomy.instance!!.configController.configs[MarketMyItemsInventoryConfig::class.java]!!.getConfig()
+            MillMCEconomy.instance!!.configController!!.configs[MarketMyItemsInventoryConfig::class.java]!!.getConfig()
                 ?.getConfigurationSection("INVENTORY")!!
     }
 
@@ -78,7 +78,7 @@ class MarketMyItemsInventory(private val marketController: MarketController) : P
                         "INVENTORY_FULL",
                         context.player,
                         emptyMap(),
-                        MillMCEconomy.instance!!.configController.configs[MessagesConfig::class.java]!!.getConfig()!!
+                        MillMCEconomy.instance!!.configController!!.configs[MessagesConfig::class.java]!!.getConfig()!!
                     )
                 )
                 return@onClick
@@ -90,7 +90,7 @@ class MarketMyItemsInventory(private val marketController: MarketController) : P
                     "MARKET_ITEM_REMOVED",
                     context.player,
                     emptyMap(),
-                    MillMCEconomy.instance!!.configController.configs[MessagesConfig::class.java]!!.getConfig()!!
+                    MillMCEconomy.instance!!.configController!!.configs[MessagesConfig::class.java]!!.getConfig()!!
                 )
             )
             context.player.inventory.addItem(value.itemStack)

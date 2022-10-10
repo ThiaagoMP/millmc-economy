@@ -3,6 +3,7 @@ package br.com.thiaago.millmc.economy.config
 import br.com.thiaago.millmc.economy.MillMCEconomy
 import br.com.thiaago.millmc.economy.config.impl.BaltopConfig
 import br.com.thiaago.millmc.economy.config.impl.MessagesConfig
+import br.com.thiaago.millmc.economy.config.impl.TradeConfig
 import br.com.thiaago.millmc.economy.config.impl.market.*
 
 class ConfigController(val configs: MutableMap<Class<*>, CustomConfig> = emptyMap<Class<*>, CustomConfig>().toMutableMap()) {
@@ -16,6 +17,7 @@ class ConfigController(val configs: MutableMap<Class<*>, CustomConfig> = emptyMa
         configs[MarketCategoriesInventoryConfig::class.java] = MarketCategoriesInventoryConfig().setup(plugin)
         configs[MarketNegotiationInventoryConfig::class.java] = MarketNegotiationInventoryConfig().setup(plugin)
         configs[MarketQuantitiesPermissionsConfig::class.java] = MarketQuantitiesPermissionsConfig().setup(plugin)
+        configs[TradeConfig::class.java] = TradeConfig().setup(plugin)
         return this
     }
 

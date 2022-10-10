@@ -23,9 +23,9 @@ class MarketItemsInventory : PagedInventory<MarketItem>() {
 
     object MarketItemsInventoryFields {
         val config =
-            MillMCEconomy.instance!!.configController.configs[MarketItemsInventoryConfig::class.java]!!.getConfig()!!
+            MillMCEconomy.instance!!.configController!!.configs[MarketItemsInventoryConfig::class.java]!!.getConfig()!!
         val messagesConfig =
-            MillMCEconomy.instance!!.configController.configs[MessagesConfig::class.java]!!.getConfig()!!
+            MillMCEconomy.instance!!.configController!!.configs[MessagesConfig::class.java]!!.getConfig()!!
         val defaultConfig = MillMCEconomy.instance!!.config!!
         val marketController = MillMCEconomy.instance!!.marketController!!
 
