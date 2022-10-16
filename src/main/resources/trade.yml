@@ -7,10 +7,7 @@ INVENTORY:
   BORDER_ITEM:
     TYPE: IRON_BARDING
     DATA: 0
-    pt-br:
-      DISPLAY_NAME: '&7-'
-    en-us:
-      DISPLAY_NAME: '&7-'
+    DISPLAY_NAME: '&7-'
   ACCEPT_ITEM:
     TYPE: INK_SACK
     COLOR_INITIAL: GRAY
@@ -25,6 +22,20 @@ INVENTORY:
       LORE:
         - ''
         - '&7Click to confirm the trade!'
+  DENY_ITEM:
+    TYPE: INK_SACK
+    COLOR_INITIAL: GRAY
+    COLOR_ACCEPT: RED
+    pt-br:
+      DISPLAY_NAME: '&7Cancelar'
+      LORE:
+        - ''
+        - '&7Clique para cancelar a troca!'
+    en-us:
+      DISPLAY_NAME: '&7Cancel'
+      LORE:
+        - ''
+        - '&7Click to cancel the trade!'
   INFO_ITEM:
     TYPE: PAPER
     DATA: 0

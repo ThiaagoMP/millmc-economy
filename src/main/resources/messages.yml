@@ -41,7 +41,10 @@ pt-br:
   RECEIVED_TRADE: '&aPedido de troca recebido!'
   ACCEPT_TRADE_JSON: '&aAceitar '
   DENY_TRADE_JSON: '&cRecusar'
+  ACCEPT_TRADE_JSON_HOVER: '&7Clique para aceitar '
+  DENY_TRADE_JSON_HOVER: '&7Clique para recusar'
   TRADE_DENIED: '&aTroca recusada!'
+  TRADE_PERFORMED: '&aTroca efetuada'
 en-us:
   MONEY_MESSAGE: '&aMoney from %player%: %money%'
   PLAYER_NOT_FOUND: '&cPlayer not found!'
@@ -85,4 +88,7 @@ en-us:
   RECEIVED_TRADE: '&aTrade order received!'
   ACCEPT_TRADE_JSON: '&aAccept '
   DENY_TRADE_JSON: '&cDeny'
+  ACCEPT_TRADE_JSON_HOVER: '&7Click to accept '
+  DENY_TRADE_JSON_HOVER: '&7Click to deny'
   TRADE_DENIED: '&aTrade denied!'
+  TRADE_PERFORMED: '&aTrade performed'

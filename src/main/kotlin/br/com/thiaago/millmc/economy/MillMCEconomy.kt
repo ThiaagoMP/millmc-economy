@@ -15,6 +15,8 @@ import br.com.thiaago.millmc.economy.system.controller.AccountController
 import br.com.thiaago.millmc.economy.system.dao.AccountProvider
 import br.com.thiaago.millmc.economy.system.runnable.SaveAccountsRunnable
 import br.com.thiaago.millmc.economy.system.spigot.listener.PlayerListeners
+import br.com.thiaago.millmc.economy.trade.TradeLoader
+import br.com.thiaago.millmc.economy.trade.controller.TradeController
 import me.saiintbrisson.bukkit.command.BukkitFrame
 import me.saiintbrisson.minecraft.ViewFrame
 import org.bukkit.Bukkit
@@ -37,6 +39,8 @@ class MillMCEconomy : JavaPlugin() {
     private var marketItemsExpiredProvider: MarketItemsExpiredProvider? = null
 
     var marketController: MarketController? = null
+
+    var tradeController: TradeController? = null
 
     var viewFrame: ViewFrame? = null
 
@@ -61,12 +65,15 @@ class MillMCEconomy : JavaPlugin() {
             marketItemsExpiredProvider = marketItemsExpiredProvider!!
         )
 
+        tradeController = TradeController()
+
         Bukkit.getPluginManager().registerEvents(PlayerListeners(accountController!!), this)
         viewFrame = ViewFrameLoader.load(this)
 
         val bukkitFrame = BukkitFrame(this)
         BasicLoader.load(this, bukkitFrame, accountController!!)
         MarketLoader.load(bukkitFrame)
+        TradeLoader.load(this, bukkitFrame)
 
         //just for testing, reload
         Bukkit.getOnlinePlayers().forEach { accountController!!.loadAccount(it.name) }
